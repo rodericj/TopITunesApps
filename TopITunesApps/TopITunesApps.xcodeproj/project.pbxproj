@@ -36,8 +36,8 @@
 		1787B79A1567577B0070D18E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B7991567577B0070D18E /* CoreData.framework */; };
 		1787B79D1567580F0070D18E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1787B79B1567580F0070D18E /* Model.xcdatamodeld */; };
 		1787B79E1567580F0070D18E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1787B79B1567580F0070D18E /* Model.xcdatamodeld */; };
-		1787B7A615675C000070D18E /* RJAppStoreApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7A515675C000070D18E /* RJAppStoreApp.m */; };
-		1787B7A715675C000070D18E /* RJAppStoreApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7A515675C000070D18E /* RJAppStoreApp.m */; };
+		1787B7B2156760B30070D18E /* RJAppStoreApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7B1156760B30070D18E /* RJAppStoreApp.m */; };
+		1787B7B3156760B30070D18E /* RJAppStoreApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7B1156760B30070D18E /* RJAppStoreApp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +86,8 @@
 		1787B7961567541B0070D18E /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataModel.m; path = DataModel/DataModel.m; sourceTree = "<group>"; };
 		1787B7991567577B0070D18E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1787B79C1567580F0070D18E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		1787B7A415675C000070D18E /* RJAppStoreApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJAppStoreApp.h; path = DataModel/GeneratedNSManagedObjects/RJAppStoreApp.h; sourceTree = "<group>"; };
-		1787B7A515675C000070D18E /* RJAppStoreApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJAppStoreApp.m; path = DataModel/GeneratedNSManagedObjects/RJAppStoreApp.m; sourceTree = "<group>"; };
+		1787B7B0156760B30070D18E /* RJAppStoreApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJAppStoreApp.h; path = DataModel/GeneratedNSManagedObjects/RJAppStoreApp.h; sourceTree = "<group>"; };
+		1787B7B1156760B30070D18E /* RJAppStoreApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJAppStoreApp.m; path = DataModel/GeneratedNSManagedObjects/RJAppStoreApp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +224,8 @@
 		1787B79F15675B380070D18E /* GeneratedNSManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				1787B7A415675C000070D18E /* RJAppStoreApp.h */,
-				1787B7A515675C000070D18E /* RJAppStoreApp.m */,
+				1787B7B0156760B30070D18E /* RJAppStoreApp.h */,
+				1787B7B1156760B30070D18E /* RJAppStoreApp.m */,
 			);
 			name = GeneratedNSManagedObjects;
 			sourceTree = "<group>";
@@ -349,7 +349,7 @@
 				1787B78E15674DA70070D18E /* RJAppTableViewController.m in Sources */,
 				1787B7971567541B0070D18E /* DataModel.m in Sources */,
 				1787B79D1567580F0070D18E /* Model.xcdatamodeld in Sources */,
-				1787B7A615675C000070D18E /* RJAppStoreApp.m in Sources */,
+				1787B7B2156760B30070D18E /* RJAppStoreApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +365,7 @@
 				1787B78F15674DA70070D18E /* RJAppTableViewController.m in Sources */,
 				1787B7981567541B0070D18E /* DataModel.m in Sources */,
 				1787B79E1567580F0070D18E /* Model.xcdatamodeld in Sources */,
-				1787B7A715675C000070D18E /* RJAppStoreApp.m in Sources */,
+				1787B7B3156760B30070D18E /* RJAppStoreApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

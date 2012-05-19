@@ -11,12 +11,18 @@
 
 @implementation RJAppStoreApp
 
-@dynamic name;
+@dynamic title;
 @dynamic appDescription;
 @dynamic rating;
 @dynamic appType;
-@dynamic cost;
+@dynamic priceAmount;
 @dynamic developer;
 @dynamic rank;
+@dynamic priceCurrency;
+@dynamic rights;
+@dynamic iTunesLink;
+@dynamic category;
+@dynamic releaseDate;
+@dynamic imageUrl;
 
 @end
