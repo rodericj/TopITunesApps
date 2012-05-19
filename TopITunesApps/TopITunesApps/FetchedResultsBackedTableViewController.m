@@ -7,21 +7,22 @@
 //
 
 #import "FetchedResultsBackedTableViewController.h"
-//#import "DataModel.h"
-//#import "MediaItem.h"
+#import "DataModel.h"
 
 @implementation FetchedResultsBackedTableViewController : UITableViewController
 
 @synthesize fetchController = _fetchController;
-@synthesize entityName      = _entityName;
-@synthesize sortBy          = _sortBy;
+@synthesize entityName;
+@synthesize sortBy;
 
 #pragma mark -
 -(NSPredicate *)predicate {
+    NSAssert(NO, @"Need to override the predicate");
     return nil;
 }
 
 - (BOOL)ascendingOrder {
+    NSAssert(NO, @"Need to override ascendingOrder");
     return YES;
 }
 
@@ -32,14 +33,12 @@
 }
 #pragma mark - Fetched Results Controller
 -(NSFetchedResultsController *)fetchController {
-    //TODO add this in when we have a data model
-    return nil;    
+
     if (_fetchController) {
         return _fetchController;
     }
     
-   // NSManagedObjectContext *context = [[DataModel sharedInstance] managedObjectContext];
-    NSManagedObjectContext *context = nil;
+    NSManagedObjectContext *context = [[DataModel sharedInstance] managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.entityName];
     
     // Configure the request's entity, and optionally its predicate.

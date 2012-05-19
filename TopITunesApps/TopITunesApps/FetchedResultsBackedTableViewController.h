@@ -10,9 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @interface FetchedResultsBackedTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
-    NSFetchedResultsController *_fetchController;
-    NSString                    *_entityName;
-    NSString                    *_sortBy;
+
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchController;
 @property (nonatomic, retain) NSString *entityName;
