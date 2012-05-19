@@ -87,23 +87,6 @@
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="FetchedResultsBackedTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FetchedResultsBackedTableViewController.h"/>
-        </class>
-        <class className="RJAppTableViewController" superclassName="FetchedResultsBackedTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJAppTableViewController.h"/>
-        </class>
-        <class className="RJSearchAppsViewController" superclassName="FetchedResultsBackedTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJSearchAppsViewController.h"/>
-        </class>
-        <class className="RJTopFreeAppsViewController" superclassName="RJAppTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJTopFreeAppsViewController.h"/>
-        </class>
-        <class className="RJTopPaidAppsViewController" superclassName="RJAppTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJTopPaidAppsViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

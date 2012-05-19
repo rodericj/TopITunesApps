@@ -31,6 +31,9 @@
 		1787B78B156737EA0070D18E /* RJTopPaidAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B789156737EA0070D18E /* RJTopPaidAppsViewController.m */; };
 		1787B78E15674DA70070D18E /* RJAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B78D15674DA70070D18E /* RJAppTableViewController.m */; };
 		1787B78F15674DA70070D18E /* RJAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B78D15674DA70070D18E /* RJAppTableViewController.m */; };
+		1787B7971567541B0070D18E /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7961567541B0070D18E /* DataModel.m */; };
+		1787B7981567541B0070D18E /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7961567541B0070D18E /* DataModel.m */; };
+		1787B79A1567577B0070D18E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B7991567577B0070D18E /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		1787B789156737EA0070D18E /* RJTopPaidAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJTopPaidAppsViewController.m; path = ViewControllers/RJTopPaidAppsViewController.m; sourceTree = "<group>"; };
 		1787B78C15674DA70070D18E /* RJAppTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJAppTableViewController.h; path = ViewControllers/RJAppTableViewController.h; sourceTree = "<group>"; };
 		1787B78D15674DA70070D18E /* RJAppTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJAppTableViewController.m; path = ViewControllers/RJAppTableViewController.m; sourceTree = "<group>"; };
+		1787B7951567541B0070D18E /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataModel.h; path = DataModel/DataModel.h; sourceTree = "<group>"; };
+		1787B7961567541B0070D18E /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataModel.m; path = DataModel/DataModel.m; sourceTree = "<group>"; };
+		1787B7991567577B0070D18E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1787B79A1567577B0070D18E /* CoreData.framework in Frameworks */,
 				1787B73E1567306F0070D18E /* UIKit.framework in Frameworks */,
 				1787B7401567306F0070D18E /* Foundation.framework in Frameworks */,
 				1787B7421567306F0070D18E /* CoreGraphics.framework in Frameworks */,
@@ -123,6 +130,7 @@
 		1787B73C1567306F0070D18E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1787B7991567577B0070D18E /* CoreData.framework */,
 				1787B73D1567306F0070D18E /* UIKit.framework */,
 				1787B73F1567306F0070D18E /* Foundation.framework */,
 				1787B7411567306F0070D18E /* CoreGraphics.framework */,
@@ -134,6 +142,7 @@
 		1787B7431567306F0070D18E /* TopITunesApps */ = {
 			isa = PBXGroup;
 			children = (
+				1787B790156753D20070D18E /* DataModel */,
 				1787B785156737E00070D18E /* ViewControllers */,
 				1787B74C156730700070D18E /* RJAppDelegate.h */,
 				1787B74D156730700070D18E /* RJAppDelegate.m */,
@@ -192,6 +201,15 @@
 				1787B78D15674DA70070D18E /* RJAppTableViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1787B790156753D20070D18E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1787B7951567541B0070D18E /* DataModel.h */,
+				1787B7961567541B0070D18E /* DataModel.m */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +329,7 @@
 				1787B77F1567318C0070D18E /* FetchedResultsBackedTableViewController.m in Sources */,
 				1787B783156737930070D18E /* RJSearchAppsViewController.m in Sources */,
 				1787B78E15674DA70070D18E /* RJAppTableViewController.m in Sources */,
+				1787B7971567541B0070D18E /* DataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +343,7 @@
 				1787B78A156737EA0070D18E /* RJTopFreeAppsViewController.m in Sources */,
 				1787B78B156737EA0070D18E /* RJTopPaidAppsViewController.m in Sources */,
 				1787B78F15674DA70070D18E /* RJAppTableViewController.m in Sources */,
+				1787B7981567541B0070D18E /* DataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
