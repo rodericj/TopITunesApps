@@ -17,5 +17,6 @@
 @dynamic appType;
 @dynamic cost;
 @dynamic developer;
+@dynamic rank;
 
 @end

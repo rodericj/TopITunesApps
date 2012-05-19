@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSNumber * appType;
 @property (nonatomic, retain) NSNumber * cost;
 @property (nonatomic, retain) NSString * developer;
+@property (nonatomic, retain) NSNumber * rank;
 
 @end
