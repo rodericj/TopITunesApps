@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSNumber * rank;
 @property (nonatomic, retain) NSString * priceCurrency;
 @property (nonatomic, retain) NSString * rights;
-@property (nonatomic, retain) UNKNOWN_TYPE iTunesLink;
+@property (nonatomic, retain) NSString * iTunesLink;
 @property (nonatomic, retain) NSString * category;
 @property (nonatomic, retain) NSDate * releaseDate;
 @property (nonatomic, retain) NSString * imageUrl;
