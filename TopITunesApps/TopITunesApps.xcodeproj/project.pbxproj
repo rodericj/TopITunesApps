@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1787B73E1567306F0070D18E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B73D1567306F0070D18E /* UIKit.framework */; };
+		1787B7401567306F0070D18E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B73F1567306F0070D18E /* Foundation.framework */; };
+		1787B7421567306F0070D18E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B7411567306F0070D18E /* CoreGraphics.framework */; };
+		1787B7481567306F0070D18E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1787B7461567306F0070D18E /* InfoPlist.strings */; };
+		1787B74A1567306F0070D18E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7491567306F0070D18E /* main.m */; };
+		1787B74E156730700070D18E /* RJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B74D156730700070D18E /* RJAppDelegate.m */; };
+		1787B751156730700070D18E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1787B74F156730700070D18E /* MainStoryboard.storyboard */; };
+		1787B756156730700070D18E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1787B755156730700070D18E /* first.png */; };
+		1787B758156730700070D18E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1787B757156730700070D18E /* first@2x.png */; };
+		1787B75D156730700070D18E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 1787B75C156730700070D18E /* second.png */; };
+		1787B75F156730700070D18E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1787B75E156730700070D18E /* second@2x.png */; };
+		1787B767156730700070D18E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B766156730700070D18E /* SenTestingKit.framework */; };
+		1787B768156730700070D18E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B73D1567306F0070D18E /* UIKit.framework */; };
+		1787B769156730700070D18E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1787B73F1567306F0070D18E /* Foundation.framework */; };
+		1787B771156730700070D18E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1787B76F156730700070D18E /* InfoPlist.strings */; };
+		1787B774156730700070D18E /* TopITunesAppsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B773156730700070D18E /* TopITunesAppsTests.m */; };
+		1787B77F1567318C0070D18E /* FetchedResultsBackedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B77E1567318C0070D18E /* FetchedResultsBackedTableViewController.m */; };
+		1787B7801567318C0070D18E /* FetchedResultsBackedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B77E1567318C0070D18E /* FetchedResultsBackedTableViewController.m */; };
+		1787B783156737930070D18E /* RJSearchAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B782156737930070D18E /* RJSearchAppsViewController.m */; };
+		1787B784156737930070D18E /* RJSearchAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B782156737930070D18E /* RJSearchAppsViewController.m */; };
+		1787B78A156737EA0070D18E /* RJTopFreeAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B787156737EA0070D18E /* RJTopFreeAppsViewController.m */; };
+		1787B78B156737EA0070D18E /* RJTopPaidAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B789156737EA0070D18E /* RJTopPaidAppsViewController.m */; };
+		1787B78E15674DA70070D18E /* RJAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B78D15674DA70070D18E /* RJAppTableViewController.m */; };
+		1787B78F15674DA70070D18E /* RJAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B78D15674DA70070D18E /* RJAppTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1787B76A156730700070D18E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1787B7301567306F0070D18E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1787B7381567306F0070D18E;
+			remoteInfo = TopITunesApps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1787B7391567306F0070D18E /* TopITunesApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopITunesApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1787B73D1567306F0070D18E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1787B73F1567306F0070D18E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1787B7411567306F0070D18E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1787B7451567306F0070D18E /* TopITunesApps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopITunesApps-Info.plist"; sourceTree = "<group>"; };
+		1787B7471567306F0070D18E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1787B7491567306F0070D18E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1787B74B156730700070D18E /* TopITunesApps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TopITunesApps-Prefix.pch"; sourceTree = "<group>"; };
+		1787B74C156730700070D18E /* RJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJAppDelegate.h; sourceTree = "<group>"; };
+		1787B74D156730700070D18E /* RJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJAppDelegate.m; sourceTree = "<group>"; };
+		1787B750156730700070D18E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1787B755156730700070D18E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		1787B757156730700070D18E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		1787B75C156730700070D18E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		1787B75E156730700070D18E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		1787B765156730700070D18E /* TopITunesAppsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopITunesAppsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1787B766156730700070D18E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1787B76E156730700070D18E /* TopITunesAppsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopITunesAppsTests-Info.plist"; sourceTree = "<group>"; };
+		1787B770156730700070D18E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1787B772156730700070D18E /* TopITunesAppsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopITunesAppsTests.h; sourceTree = "<group>"; };
+		1787B773156730700070D18E /* TopITunesAppsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopITunesAppsTests.m; sourceTree = "<group>"; };
+		1787B77D1567318C0070D18E /* FetchedResultsBackedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsBackedTableViewController.h; sourceTree = "<group>"; };
+		1787B77E1567318C0070D18E /* FetchedResultsBackedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsBackedTableViewController.m; sourceTree = "<group>"; };
+		1787B781156737930070D18E /* RJSearchAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJSearchAppsViewController.h; path = ViewControllers/RJSearchAppsViewController.h; sourceTree = "<group>"; };
+		1787B782156737930070D18E /* RJSearchAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJSearchAppsViewController.m; path = ViewControllers/RJSearchAppsViewController.m; sourceTree = "<group>"; };
+		1787B786156737EA0070D18E /* RJTopFreeAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJTopFreeAppsViewController.h; path = ViewControllers/RJTopFreeAppsViewController.h; sourceTree = "<group>"; };
+		1787B787156737EA0070D18E /* RJTopFreeAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJTopFreeAppsViewController.m; path = ViewControllers/RJTopFreeAppsViewController.m; sourceTree = "<group>"; };
+		1787B788156737EA0070D18E /* RJTopPaidAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJTopPaidAppsViewController.h; path = ViewControllers/RJTopPaidAppsViewController.h; sourceTree = "<group>"; };
+		1787B789156737EA0070D18E /* RJTopPaidAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJTopPaidAppsViewController.m; path = ViewControllers/RJTopPaidAppsViewController.m; sourceTree = "<group>"; };
+		1787B78C15674DA70070D18E /* RJAppTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJAppTableViewController.h; path = ViewControllers/RJAppTableViewController.h; sourceTree = "<group>"; };
+		1787B78D15674DA70070D18E /* RJAppTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJAppTableViewController.m; path = ViewControllers/RJAppTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1787B7361567306F0070D18E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1787B73E1567306F0070D18E /* UIKit.framework in Frameworks */,
+				1787B7401567306F0070D18E /* Foundation.framework in Frameworks */,
+				1787B7421567306F0070D18E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1787B761156730700070D18E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1787B767156730700070D18E /* SenTestingKit.framework in Frameworks */,
+				1787B768156730700070D18E /* UIKit.framework in Frameworks */,
+				1787B769156730700070D18E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1787B72E1567306F0070D18E = {
+			isa = PBXGroup;
+			children = (
+				1787B7431567306F0070D18E /* TopITunesApps */,
+				1787B76C156730700070D18E /* TopITunesAppsTests */,
+				1787B73C1567306F0070D18E /* Frameworks */,
+				1787B73A1567306F0070D18E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1787B73A1567306F0070D18E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1787B7391567306F0070D18E /* TopITunesApps.app */,
+				1787B765156730700070D18E /* TopITunesAppsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1787B73C1567306F0070D18E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1787B73D1567306F0070D18E /* UIKit.framework */,
+				1787B73F1567306F0070D18E /* Foundation.framework */,
+				1787B7411567306F0070D18E /* CoreGraphics.framework */,
+				1787B766156730700070D18E /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1787B7431567306F0070D18E /* TopITunesApps */ = {
+			isa = PBXGroup;
+			children = (
+				1787B785156737E00070D18E /* ViewControllers */,
+				1787B74C156730700070D18E /* RJAppDelegate.h */,
+				1787B74D156730700070D18E /* RJAppDelegate.m */,
+				1787B74F156730700070D18E /* MainStoryboard.storyboard */,
+				1787B755156730700070D18E /* first.png */,
+				1787B757156730700070D18E /* first@2x.png */,
+				1787B781156737930070D18E /* RJSearchAppsViewController.h */,
+				1787B782156737930070D18E /* RJSearchAppsViewController.m */,
+				1787B75C156730700070D18E /* second.png */,
+				1787B75E156730700070D18E /* second@2x.png */,
+				1787B77D1567318C0070D18E /* FetchedResultsBackedTableViewController.h */,
+				1787B77E1567318C0070D18E /* FetchedResultsBackedTableViewController.m */,
+				1787B7441567306F0070D18E /* Supporting Files */,
+			);
+			path = TopITunesApps;
+			sourceTree = "<group>";
+		};
+		1787B7441567306F0070D18E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1787B7451567306F0070D18E /* TopITunesApps-Info.plist */,
+				1787B7461567306F0070D18E /* InfoPlist.strings */,
+				1787B7491567306F0070D18E /* main.m */,
+				1787B74B156730700070D18E /* TopITunesApps-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1787B76C156730700070D18E /* TopITunesAppsTests */ = {
+			isa = PBXGroup;
+			children = (
+				1787B772156730700070D18E /* TopITunesAppsTests.h */,
+				1787B773156730700070D18E /* TopITunesAppsTests.m */,
+				1787B76D156730700070D18E /* Supporting Files */,
+			);
+			path = TopITunesAppsTests;
+			sourceTree = "<group>";
+		};
+		1787B76D156730700070D18E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1787B76E156730700070D18E /* TopITunesAppsTests-Info.plist */,
+				1787B76F156730700070D18E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1787B785156737E00070D18E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1787B786156737EA0070D18E /* RJTopFreeAppsViewController.h */,
+				1787B787156737EA0070D18E /* RJTopFreeAppsViewController.m */,
+				1787B788156737EA0070D18E /* RJTopPaidAppsViewController.h */,
+				1787B789156737EA0070D18E /* RJTopPaidAppsViewController.m */,
+				1787B78C15674DA70070D18E /* RJAppTableViewController.h */,
+				1787B78D15674DA70070D18E /* RJAppTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1787B7381567306F0070D18E /* TopITunesApps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1787B777156730700070D18E /* Build configuration list for PBXNativeTarget "TopITunesApps" */;
+			buildPhases = (
+				1787B7351567306F0070D18E /* Sources */,
+				1787B7361567306F0070D18E /* Frameworks */,
+				1787B7371567306F0070D18E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopITunesApps;
+			productName = TopITunesApps;
+			productReference = 1787B7391567306F0070D18E /* TopITunesApps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1787B764156730700070D18E /* TopITunesAppsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1787B77A156730700070D18E /* Build configuration list for PBXNativeTarget "TopITunesAppsTests" */;
+			buildPhases = (
+				1787B760156730700070D18E /* Sources */,
+				1787B761156730700070D18E /* Frameworks */,
+				1787B762156730700070D18E /* Resources */,
+				1787B763156730700070D18E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1787B76B156730700070D18E /* PBXTargetDependency */,
+			);
+			name = TopITunesAppsTests;
+			productName = TopITunesAppsTests;
+			productReference = 1787B765156730700070D18E /* TopITunesAppsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1787B7301567306F0070D18E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RJ;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Roderic;
+			};
+			buildConfigurationList = 1787B7331567306F0070D18E /* Build configuration list for PBXProject "TopITunesApps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1787B72E1567306F0070D18E;
+			productRefGroup = 1787B73A1567306F0070D18E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1787B7381567306F0070D18E /* TopITunesApps */,
+				1787B764156730700070D18E /* TopITunesAppsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1787B7371567306F0070D18E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1787B7481567306F0070D18E /* InfoPlist.strings in Resources */,
+				1787B751156730700070D18E /* MainStoryboard.storyboard in Resources */,
+				1787B756156730700070D18E /* first.png in Resources */,
+				1787B758156730700070D18E /* first@2x.png in Resources */,
+				1787B75D156730700070D18E /* second.png in Resources */,
+				1787B75F156730700070D18E /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1787B762156730700070D18E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1787B771156730700070D18E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1787B763156730700070D18E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1787B7351567306F0070D18E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1787B74A1567306F0070D18E /* main.m in Sources */,
+				1787B74E156730700070D18E /* RJAppDelegate.m in Sources */,
+				1787B77F1567318C0070D18E /* FetchedResultsBackedTableViewController.m in Sources */,
+				1787B783156737930070D18E /* RJSearchAppsViewController.m in Sources */,
+				1787B78E15674DA70070D18E /* RJAppTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1787B760156730700070D18E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1787B774156730700070D18E /* TopITunesAppsTests.m in Sources */,
+				1787B7801567318C0070D18E /* FetchedResultsBackedTableViewController.m in Sources */,
+				1787B784156737930070D18E /* RJSearchAppsViewController.m in Sources */,
+				1787B78A156737EA0070D18E /* RJTopFreeAppsViewController.m in Sources */,
+				1787B78B156737EA0070D18E /* RJTopPaidAppsViewController.m in Sources */,
+				1787B78F15674DA70070D18E /* RJAppTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1787B76B156730700070D18E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1787B7381567306F0070D18E /* TopITunesApps */;
+			targetProxy = 1787B76A156730700070D18E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1787B7461567306F0070D18E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1787B7471567306F0070D18E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1787B74F156730700070D18E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1787B750156730700070D18E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		1787B76F156730700070D18E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1787B770156730700070D18E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1787B775156730700070D18E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1787B776156730700070D18E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1787B778156730700070D18E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TopITunesApps/TopITunesApps-Prefix.pch";
+				INFOPLIST_FILE = "TopITunesApps/TopITunesApps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1787B779156730700070D18E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TopITunesApps/TopITunesApps-Prefix.pch";
+				INFOPLIST_FILE = "TopITunesApps/TopITunesApps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1787B77B156730700070D18E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TopITunesApps.app/TopITunesApps";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TopITunesApps/TopITunesApps-Prefix.pch";
+				INFOPLIST_FILE = "TopITunesAppsTests/TopITunesAppsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1787B77C156730700070D18E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TopITunesApps.app/TopITunesApps";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TopITunesApps/TopITunesApps-Prefix.pch";
+				INFOPLIST_FILE = "TopITunesAppsTests/TopITunesAppsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1787B7331567306F0070D18E /* Build configuration list for PBXProject "TopITunesApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1787B775156730700070D18E /* Debug */,
+				1787B776156730700070D18E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1787B777156730700070D18E /* Build configuration list for PBXNativeTarget "TopITunesApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1787B778156730700070D18E /* Debug */,
+				1787B779156730700070D18E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1787B77A156730700070D18E /* Build configuration list for PBXNativeTarget "TopITunesAppsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1787B77B156730700070D18E /* Debug */,
+				1787B77C156730700070D18E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1787B7301567306F0070D18E /* Project object */;
+}
