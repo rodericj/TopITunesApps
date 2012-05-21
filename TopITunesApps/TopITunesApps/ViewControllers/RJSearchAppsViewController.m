@@ -14,6 +14,19 @@
 
 @implementation RJSearchAppsViewController
 
+
+#pragma mark 
+
+- (NSString *)appstoreUrl {
+    return @"http://itunes.apple.com/us/rss/topfreeapplications/limit=25/json";
+}
+
+-(NSPredicate *)predicate {
+    return nil;
+}
+
+#pragma mark lifecycle methods
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -2,20 +2,19 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="RJAppStoreApp" representedClassName="RJAppStoreApp" syncable="YES">
         <attribute name="appDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appId" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="appType" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="0" syncable="YES"/>
-        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="developer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="iTunesLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceAmount" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" syncable="YES"/>
         <attribute name="priceCurrency" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="releaseDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="rights" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RJAppStoreApp" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="RJAppStoreApp" positionX="160" positionY="192" width="128" height="225"/>
     </elements>
 </model>

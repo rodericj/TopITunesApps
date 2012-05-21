@@ -2,7 +2,7 @@
 //  RJAppStoreApp.m
 //  TopITunesApps
 //
-//  Created by roderic campbell on 5/18/12.
+//  Created by roderic campbell on 5/20/12.
 //  Copyright (c) 2012 Roderic. All rights reserved.
 //
 
@@ -11,18 +11,17 @@
 
 @implementation RJAppStoreApp
 
-@dynamic title;
 @dynamic appDescription;
-@dynamic rating;
+@dynamic appId;
 @dynamic appType;
-@dynamic priceAmount;
 @dynamic developer;
-@dynamic rank;
-@dynamic priceCurrency;
-@dynamic rights;
-@dynamic iTunesLink;
-@dynamic category;
-@dynamic releaseDate;
 @dynamic imageUrl;
+@dynamic iTunesLink;
+@dynamic priceAmount;
+@dynamic priceCurrency;
+@dynamic rank;
+@dynamic releaseDate;
+@dynamic rights;
+@dynamic title;
 
 @end

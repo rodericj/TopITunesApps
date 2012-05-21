@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Roderic. All rights reserved.
 //
 
-#import "FetchedResultsBackedTableViewController.h"
+#import "RJAppTableViewController.h"
 
-@interface RJSearchAppsViewController : FetchedResultsBackedTableViewController
+@interface RJSearchAppsViewController : RJAppTableViewController
 
 @end

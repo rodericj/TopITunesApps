@@ -14,6 +14,15 @@
 
 @implementation RJTopFreeAppsViewController
 
+- (NSString *)appstoreUrl {
+    return @"http://itunes.apple.com/us/rss/topfreeapplications/limit=25/json";
+}
+
+-(NSPredicate *)predicate {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"appType == 0"];
+    return predicate;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

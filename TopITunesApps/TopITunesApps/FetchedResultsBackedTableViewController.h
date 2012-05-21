@@ -11,6 +11,8 @@
 
 @interface FetchedResultsBackedTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
 
+    NSFetchedResultsController *_fetchController;
+
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchController;
 @property (nonatomic, retain) NSString *entityName;

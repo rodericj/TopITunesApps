@@ -8,6 +8,6 @@
 
 #import "FetchedResultsBackedTableViewController.h"
 
-@interface RJAppTableViewController : FetchedResultsBackedTableViewController
+@interface RJAppTableViewController : FetchedResultsBackedTableViewController <NSURLConnectionDelegate>
 
 @end

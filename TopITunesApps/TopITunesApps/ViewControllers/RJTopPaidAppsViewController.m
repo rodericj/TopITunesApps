@@ -14,6 +14,18 @@
 
 @implementation RJTopPaidAppsViewController
 
+
+- (NSString *)appstoreUrl {
+    return @"http://itunes.apple.com/us/rss/toppaidapplications/limit=25/json";
+}
+
+-(NSPredicate *)predicate {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"appType == 1"];
+    return predicate;
+}
+
+#pragma mark life cycle methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

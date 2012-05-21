@@ -15,8 +15,23 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="irP-07-blx">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2" id="Ez7-75-uRa"/>
+                            <outlet property="delegate" destination="2" id="GeD-SY-oVE"/>
+                        </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Top Free" image="first.png" id="7"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
@@ -41,10 +56,6 @@
                                 </view>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Os8-QR-G2G" id="CjS-DK-HxS"/>
-                            <outlet property="delegate" destination="Os8-QR-G2G" id="qRp-wc-igw"/>
-                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="search" id="hjZ-xj-dAR"/>
                 </tableViewController>
@@ -56,12 +67,27 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
                 <viewController title="Second" id="3" customClass="RJTopPaidAppsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6bS-gF-NaG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="du9-dj-fSA">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="cZD-sL-4H5">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3" id="y5S-kZ-Stb"/>
+                            <outlet property="delegate" destination="3" id="S06-Z7-Rtd"/>
+                        </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Top Paid" image="second.png" id="6"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="498"/>
@@ -87,6 +113,27 @@
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first.png" width="30" height="30"/>
+        <image name="second.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="FetchedResultsBackedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FetchedResultsBackedTableViewController.h"/>
+        </class>
+        <class className="RJAppTableViewController" superclassName="FetchedResultsBackedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJAppTableViewController.h"/>
+        </class>
+        <class className="RJSearchAppsViewController" superclassName="FetchedResultsBackedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJSearchAppsViewController.h"/>
+        </class>
+        <class className="RJTopFreeAppsViewController" superclassName="RJAppTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJTopFreeAppsViewController.h"/>
+        </class>
+        <class className="RJTopPaidAppsViewController" superclassName="RJAppTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RJTopPaidAppsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

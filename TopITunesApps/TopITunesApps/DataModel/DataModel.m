@@ -24,7 +24,6 @@
 
 @implementation DataModel
 
-static DataModel *_dataModel = nil;
 
 #pragma mark - core data setup
 + (NSString *)getDocumentsDirectory {
@@ -182,13 +181,6 @@ static DataModel *_dataModel = nil;
 	return _persistentStoreCoordinator;
 }
 
-#pragma mark - Set up of the singleton
-+(DataModel*)sharedInstance {
-    if (_dataModel == nil) {
-        _dataModel = [[super allocWithZone:NULL] init];
-    }
-    return _dataModel;
-}
 
 #pragma mark - insertion of NSManagedObjects
 

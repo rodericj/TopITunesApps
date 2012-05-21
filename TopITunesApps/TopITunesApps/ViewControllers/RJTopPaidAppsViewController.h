@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FetchedResultsBackedTableViewController.h"
 #import "RJAppTableViewController.h"
 
-@interface RJTopPaidAppsViewController : RJAppTableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface RJTopPaidAppsViewController : RJAppTableViewController
 
 @end

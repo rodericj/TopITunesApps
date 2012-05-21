@@ -17,7 +17,5 @@
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
-+ (DataModel*)sharedInstance;
-
 #pragma mark - Device
 @end

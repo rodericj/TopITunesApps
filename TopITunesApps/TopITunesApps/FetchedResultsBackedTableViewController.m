@@ -7,9 +7,9 @@
 //
 
 #import "FetchedResultsBackedTableViewController.h"
-#import "DataModel.h"
-
-@implementation FetchedResultsBackedTableViewController : UITableViewController
+#import "RJDataModel.h"
+ 
+@implementation FetchedResultsBackedTableViewController : UITableViewController 
 
 @synthesize fetchController = _fetchController;
 @synthesize entityName;
@@ -22,7 +22,7 @@
 }
 
 - (BOOL)ascendingOrder {
-    NSAssert(NO, @"Need to override ascendingOrder");
+    //TODO NSAssert(NO, @"Need to override ascendingOrder");
     return YES;
 }
 
@@ -38,7 +38,7 @@
         return _fetchController;
     }
     
-    NSManagedObjectContext *context = [[DataModel sharedInstance] managedObjectContext];
+    NSManagedObjectContext *context = [[RJDataModel sharedInstance] managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.entityName];
     
     // Configure the request's entity, and optionally its predicate.
@@ -59,6 +59,8 @@
                         sectionNameKeyPath:nil//@"titleFirstLetter"
                         cacheName:nil/*self.entityName*/];
     [fetchRequest release];
+    
+    _fetchController.delegate = self;
     
     NSError *error;
     [_fetchController performFetch:&error];
