@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Roderic. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
 
 #import "DataModel.h"
 

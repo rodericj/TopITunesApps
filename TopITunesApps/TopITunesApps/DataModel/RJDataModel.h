@@ -10,7 +10,7 @@
 
 @interface RJDataModel : DataModel
 
-- (void)insertAppStoreAppsFromJSONData:(NSData *)json;
+- (void)insertAppStoreAppsFromJSONData:(NSData *)json platformType:(NSUInteger)platformType;
 
 + (RJDataModel*)sharedInstance;
 

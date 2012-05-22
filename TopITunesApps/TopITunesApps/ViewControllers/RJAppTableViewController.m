@@ -14,14 +14,18 @@
 
 @property (nonatomic, retain) NSString *appstoreUrl;
 @property (nonatomic, retain) NSURLConnection *connection;
+
 @end
-
-
 
 @implementation RJAppTableViewController
 
 @synthesize appstoreUrl;
 @synthesize connection;
+@synthesize selectedSegment;
+
+#pragma mark - support
+
+#pragma mark - UITableViewDelegate Method
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reuseId = @"appstorecell";
@@ -34,14 +38,17 @@
     RJAppStoreApp *app = [self.fetchController objectAtIndexPath:indexPath];
     cell.textLabel.text = app.title;
     cell.detailTextLabel.text = app.appDescription;
-    NSLog(@"the title for %@ is %@", app.appId, app.title);
+    NSLog(@"the title for %@ is %@ of type %@", app.appId, app.title, app.appType);
     return cell;
 }
 
 - (NSString *)entityName {
     return @"RJAppStoreApp";
 }
-
+- (NSPredicate *)predicate {
+    NSAssert(NO, @"predicate must be defined in concrete class");
+    return nil;
+}
 #pragma mark lifecycle methods
 
 - (NSString *)sortBy {
@@ -57,9 +64,14 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.connection cancel];
-    
+- (void)segmentChanged:(UISegmentedControl *)segment {
+    self.selectedSegment = segment.selectedSegmentIndex;
+    self.fetchController.fetchRequest.predicate = self.predicate;
+    [self.fetchController performFetch:nil];
+    [self beginNetworkRequest];
+}
+
+- (void)beginNetworkRequest {
     NSAssert(self.appstoreUrl, @"Appstore url must be set");
     NSURL *url = [NSURL URLWithString:self.appstoreUrl];
     NSLog(@"appstore url is %@", url);
@@ -71,12 +83,19 @@
                                NSLog(@"Request completed: %@", response.description);
                                
                                RJDataModel *dataModel = (RJDataModel *)[RJDataModel sharedInstance];
-                               [dataModel insertAppStoreAppsFromJSONData:data];
+                               [dataModel insertAppStoreAppsFromJSONData:data platformType:self.selectedSegment];
                                
                            }];
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
     [self.connection start];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.connection cancel];
     
+    [self beginNetworkRequest];
+       
     [super viewWillAppear:animated];
 }
 
@@ -84,6 +103,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    UISegmentedControl *header = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"iPhone", @"iPad", nil]];
+    header.segmentedControlStyle = UISegmentedControlStyleBar;
+    
+    self.navigationItem.titleView = header;
+    [header addTarget:self
+               action:@selector(segmentChanged:)
+     forControlEvents:UIControlEventValueChanged];
+    header.selectedSegmentIndex = 0;
+    
+    [header release];
+    
 }
 
 - (void)viewDidUnload

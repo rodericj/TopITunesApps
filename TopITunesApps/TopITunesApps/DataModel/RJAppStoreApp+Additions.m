@@ -8,23 +8,18 @@
 
 #import "RJAppStoreApp+Additions.h"
 
-#define kAppTypeFree 0
-#define kAppTypeCostsMoney 1
+
 @implementation RJAppStoreApp (Additions)
 
 - (void)updateAppWithJSON:(NSDictionary *)jsonDict {
+    NSLog(@"parsing all the info");
    // NSDictionary *entry = [jsonDict objectForKey:@"entry"];
     NSString *description = [[jsonDict objectForKey:@"summary"] objectForKey:@"label"];
     
     // app description
     self.appDescription = description;
 
-    // app type
-    NSString *freeness = [[jsonDict objectForKey:@"im:price"] objectForKey:@"label"];
-
-    self.appType = [NSNumber numberWithInt:[freeness isEqualToString:@"Free"] ? kAppTypeFree : kAppTypeCostsMoney];
-    
-    // category
+    // TODO set app type
     
     // developer
     self.developer = [[jsonDict objectForKey:@"im:artist"] objectForKey:@"label"];

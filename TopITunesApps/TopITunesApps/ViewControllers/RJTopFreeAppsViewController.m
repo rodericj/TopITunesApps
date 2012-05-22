@@ -8,29 +8,42 @@
 
 #import "RJTopFreeAppsViewController.h"
 
-@interface RJTopFreeAppsViewController ()
+#define kIPadPlatform  @"topfreeipadapplications"
+#define kIPhonePlatform @"topfreeapplications"
 
+@interface RJTopFreeAppsViewController ()
 @end
 
 @implementation RJTopFreeAppsViewController
 
+
+#pragma mark - stuff for the Concrete RJAppTableViewController
+
 - (NSString *)appstoreUrl {
-    return @"http://itunes.apple.com/us/rss/topfreeapplications/limit=25/json";
+    NSString *platformString = self.selectedSegment == 0 ? kIPhonePlatform : kIPadPlatform;
+    NSString *ret = [NSString stringWithFormat:@"http://itunes.apple.com/us/rss/%@/limit=25/json", platformString];
+    return ret;
 }
 
+
+
 -(NSPredicate *)predicate {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"appType == 0"];
+    NSLog(@"here we set up the predicate, the segment is %d", self.selectedSegment);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"priceAmount == 0 AND appType == %@", [NSNumber numberWithInt:self.selectedSegment]];
+    NSLog(@"predicate is %@", predicate);
     return predicate;
 }
 
+#pragma mark - lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)viewDidUnload
-{
+{    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

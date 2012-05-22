@@ -51,11 +51,10 @@ static RJDataModel *_dataModel = nil;
                                         inManagedObjectContext:self.managedObjectContext];  
     app.appId = appId;
 
-    [self save];
     return app;
 }
 
-- (void)insertAppStoreAppsFromJSONData:(NSData *)data {
+- (void)insertAppStoreAppsFromJSONData:(NSData *)data platformType:(NSUInteger)platformType{
     NSLog(@"insert");
     NSError *jsonError = nil;
     NSJSONSerialization *object = [NSJSONSerialization JSONObjectWithData:data
@@ -65,6 +64,7 @@ static RJDataModel *_dataModel = nil;
     NSDictionary *dict = (NSDictionary *)object;
     NSArray *items = [[dict objectForKey:@"feed"] objectForKey:@"entry"];
     
+    NSNumber *platformTypeNumber = [NSNumber numberWithInt:platformType];
     for (int i = 0; i < [items count]; i++) {
         NSDictionary *object = [items objectAtIndex:i];
         NSString *appId = [[[object objectForKey:@"id"] objectForKey:@"attributes"] objectForKey:@"im:id"];
@@ -76,9 +76,9 @@ static RJDataModel *_dataModel = nil;
         
         RJAppStoreApp *app = [self insertOrUpdateAppWithAppId:myNumber];
         app.rank = [NSNumber numberWithInt:i];
+        app.appType = platformTypeNumber;
         [app updateAppWithJSON:object];
     }
-    [self save];
 }
 
 @end

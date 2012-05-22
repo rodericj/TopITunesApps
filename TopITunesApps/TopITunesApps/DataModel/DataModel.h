@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 
 @interface DataModel : NSObject  {
@@ -16,6 +17,8 @@
 }
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+- (NSFetchRequest *)fetchRequestForEntity:(NSString *)entity where:(NSPredicate *)predicate orderBy:(NSString *)sort;
 
 #pragma mark - Device
 @end

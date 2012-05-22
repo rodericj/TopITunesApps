@@ -10,4 +10,8 @@
 
 @interface RJAppTableViewController : FetchedResultsBackedTableViewController <NSURLConnectionDelegate>
 
+@property (nonatomic, assign) NSUInteger selectedSegment;
+
+- (void)beginNetworkRequest;
+
 @end

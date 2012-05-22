@@ -15,6 +15,14 @@
 @implementation RJSearchAppsViewController
 
 
+#pragma mark - UISearchBarDelegate 
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 44.0f;
+//}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"search changed %@", searchText);
+}
+
 #pragma mark 
 
 - (NSString *)appstoreUrl {
@@ -40,6 +48,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    UISearchBar *search = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    search.delegate = self;
+    self.tableView.tableHeaderView = search;
+    [search release];
 }
 
 - (void)viewDidUnload

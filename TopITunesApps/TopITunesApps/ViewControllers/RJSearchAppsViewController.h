@@ -8,6 +8,6 @@
 
 #import "RJAppTableViewController.h"
 
-@interface RJSearchAppsViewController : RJAppTableViewController
+@interface RJSearchAppsViewController : RJAppTableViewController <UISearchBarDelegate>
 
 @end

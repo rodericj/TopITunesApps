@@ -8,19 +8,24 @@
 
 #import "RJTopPaidAppsViewController.h"
 
-@interface RJTopPaidAppsViewController ()
+#define kIPadPlatform  @"toppaidipadapplications"
+#define kIPhonePlatform @"toppaidapplications"
 
+@interface RJTopPaidAppsViewController ()
+@property (nonatomic, assign) BOOL iPadOnly;
 @end
 
 @implementation RJTopPaidAppsViewController
-
+@synthesize iPadOnly;
 
 - (NSString *)appstoreUrl {
-    return @"http://itunes.apple.com/us/rss/toppaidapplications/limit=25/json";
+    NSString *platformString = self.selectedSegment == 0 ? kIPhonePlatform : kIPadPlatform;
+    NSString *ret = [NSString stringWithFormat:@"http://itunes.apple.com/us/rss/%@/limit=25/json", platformString];
+    return ret;
 }
 
 -(NSPredicate *)predicate {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"appType == 1"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"priceAmount != 0 AND appType == %@", [NSNumber numberWithInt:self.selectedSegment]];
     return predicate;
 }
 
@@ -30,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.iPadOnly = NO;
 }
 
 - (void)viewDidUnload
