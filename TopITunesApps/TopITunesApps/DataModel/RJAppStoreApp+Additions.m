@@ -12,24 +12,35 @@
 @implementation RJAppStoreApp (Additions)
 
 - (void)updateAppWithJSON:(NSDictionary *)jsonDict {
-    NSLog(@"parsing all the info");
    // NSDictionary *entry = [jsonDict objectForKey:@"entry"];
     NSString *description = [[jsonDict objectForKey:@"summary"] objectForKey:@"label"];
     
     // app description
-    self.appDescription = description;
-
-    // TODO set app type
+    if (![description isEqualToString:self.appDescription]) {
+        self.appDescription = description;
+    }
     
     // developer
-    self.developer = [[jsonDict objectForKey:@"im:artist"] objectForKey:@"label"];
+    NSString *developer = [[jsonDict objectForKey:@"im:artist"] objectForKey:@"label"];
+    
+    if (![developer isEqualToString:self.developer]) {
+        self.developer = developer;
+    }
     
     // imageUrl - Naively take the first image
-    self.imageUrl = [[[jsonDict objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"];
+    NSString *imageUrl = [[[jsonDict objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"];
+
+    if (![imageUrl isEqualToString:self.imageUrl]) {
+        self.imageUrl = imageUrl;
+    }
     
     // iTunesLink
-    self.iTunesLink = [[jsonDict objectForKey:@"id"] objectForKey:@"label"];
+    NSString *iTunesLink = [[jsonDict objectForKey:@"id"] objectForKey:@"label"];
+    if (![iTunesLink isEqualToString:self.iTunesLink]) {
+        self.iTunesLink = iTunesLink;
+    }
 
+    
     NSString *priceString = [[[jsonDict objectForKey:@"im:price"] objectForKey:@"attributes"] objectForKey:@"amount"];
     
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
@@ -38,11 +49,15 @@
     [f release];
     
     // price
-    self.priceAmount = priceValue;
+    if (![priceValue isEqualToNumber:self.priceAmount]) {
+        self.priceAmount = priceValue;
+    }
 
     // currency
-    self.priceCurrency = [[[jsonDict objectForKey:@"im:price"] objectForKey:@"attributes"] objectForKey:@"currency"];
-
+    NSString *priceCurrency = [[[jsonDict objectForKey:@"im:price"] objectForKey:@"attributes"] objectForKey:@"currency"];
+    if (![priceCurrency isEqualToString:self.priceCurrency]) {
+        self.priceCurrency = priceCurrency;
+    }
         
     // releaseDate
     // TODO come back to this
@@ -50,11 +65,17 @@
 //    self.releaseDate = [[jsonDict objectForKey:@"im:releaseDate"] objectForKey:@"label"];
 
     // rights
-    self.rights = [[jsonDict objectForKey:@"rights"] objectForKey:@"label"];
+    NSString *rights = [[jsonDict objectForKey:@"rights"] objectForKey:@"label"];
+    if (![rights isEqualToString:self.rights]) {
+        self.rights = rights;
+    }
 
     // title
     NSString *title = [[jsonDict objectForKey:@"title"] objectForKey:@"label"];
-    self.title = title;
+    if (![title isEqualToString:self.title]) {
+        self.title = title;
+    }
 
+    NSLog(@"title is %@", title);
 }
 @end

@@ -75,6 +75,7 @@
  */
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    NSLog(@"begin updates ********");
     [self.tableView beginUpdates];
 }
 
@@ -130,6 +131,8 @@
 
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    NSLog(@"end updates ********");
+
     [self.tableView endUpdates];
 }
 
@@ -144,6 +147,7 @@
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchController sections] objectAtIndex:section];
+    NSLog(@"number of rows in table is %d", [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 

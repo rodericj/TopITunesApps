@@ -9,11 +9,11 @@
 #import "RJSearchAppsViewController.h"
 
 @interface RJSearchAppsViewController ()
-
+@property (nonatomic, retain) UISearchBar *search;
 @end
 
 @implementation RJSearchAppsViewController
-
+@synthesize search;
 
 #pragma mark - UISearchBarDelegate 
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -33,6 +33,9 @@
     return nil;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.search resignFirstResponder];
+}
 #pragma mark lifecycle methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -49,14 +52,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    UISearchBar *search = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    search.delegate = self;
-    self.tableView.tableHeaderView = search;
-    [search release];
+    self.search = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    self.search.delegate = self;
+    self.tableView.tableHeaderView = self.search;
+    [self.search release];
 }
 
 - (void)viewDidUnload
 {
+    self.search = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

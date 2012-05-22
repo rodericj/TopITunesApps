@@ -21,6 +21,7 @@
 - (NSString *)appstoreUrl {
     NSString *platformString = self.selectedSegment == 0 ? kIPhonePlatform : kIPadPlatform;
     NSString *ret = [NSString stringWithFormat:@"http://itunes.apple.com/us/rss/%@/limit=25/json", platformString];
+    NSLog(@"the top paid apps appstore url is %@", ret);
     return ret;
 }
 

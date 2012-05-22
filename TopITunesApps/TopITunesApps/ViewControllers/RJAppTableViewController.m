@@ -38,7 +38,7 @@
     RJAppStoreApp *app = [self.fetchController objectAtIndexPath:indexPath];
     cell.textLabel.text = app.title;
     cell.detailTextLabel.text = app.appDescription;
-    NSLog(@"the title for %@ is %@ of type %@", app.appId, app.title, app.appType);
+    //NSLog(@"the title for %@ is %@ of type %@", app.appId, app.title, app.appType);
     return cell;
 }
 
@@ -66,15 +66,19 @@
 
 - (void)segmentChanged:(UISegmentedControl *)segment {
     self.selectedSegment = segment.selectedSegmentIndex;
-    self.fetchController.fetchRequest.predicate = self.predicate;
-    [self.fetchController performFetch:nil];
+       
+    NSLog(@"segment changed");
+    //[self.fetchController performFetch:nil];
+
     [self beginNetworkRequest];
 }
 
 - (void)beginNetworkRequest {
+    [self.connection cancel];
+    
     NSAssert(self.appstoreUrl, @"Appstore url must be set");
     NSURL *url = [NSURL URLWithString:self.appstoreUrl];
-    NSLog(@"appstore url is %@", url);
+    NSLog(@"begin network request appstore url is %@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request 
@@ -84,6 +88,7 @@
                                
                                RJDataModel *dataModel = (RJDataModel *)[RJDataModel sharedInstance];
                                [dataModel insertAppStoreAppsFromJSONData:data platformType:self.selectedSegment];
+                               [dataModel save];
                                
                            }];
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
@@ -108,10 +113,10 @@
     header.segmentedControlStyle = UISegmentedControlStyleBar;
     
     self.navigationItem.titleView = header;
+    header.selectedSegmentIndex = 0;
     [header addTarget:self
                action:@selector(segmentChanged:)
      forControlEvents:UIControlEventValueChanged];
-    header.selectedSegmentIndex = 0;
     
     [header release];
     
