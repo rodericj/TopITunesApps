@@ -67,20 +67,42 @@ static RJDataModel *_dataModel = nil;
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterDecimalStyle];
     
-    NSNumber *platformTypeNumber = [NSNumber numberWithInt:platformType];
-    for (int i = 0; i < [items count]; i++) {
-        NSDictionary *object = [items objectAtIndex:i];
-        NSString *appId = [[[object objectForKey:@"id"] objectForKey:@"attributes"] objectForKey:@"im:id"];
-
-
-        NSNumber * myNumber = [f numberFromString:appId];
+    // There are 2 choices here, either we got the data from search, or
+    // we got the data from an explicit app store query
+    
+    // if we have items, we called an explicit app store query
+    if (items) {
         
-        RJAppStoreApp *app = [self insertOrUpdateAppWithAppId:myNumber];
-        app.rank = [NSNumber numberWithInt:i];
-        app.appType = platformTypeNumber;
-        [app updateAppWithJSON:object];
+        NSNumber *platformTypeNumber = [NSNumber numberWithInt:platformType];
+        for (int i = 0; i < [items count]; i++) {
+            NSDictionary *object = [items objectAtIndex:i];
+            NSString *appId = [[[object objectForKey:@"id"] objectForKey:@"attributes"] objectForKey:@"im:id"];
+            
+            
+            NSNumber * myNumber = [f numberFromString:appId];
+            
+            RJAppStoreApp *app = [self insertOrUpdateAppWithAppId:myNumber];
+            app.rank = [NSNumber numberWithInt:i];
+            app.appType = platformTypeNumber;
+            [app updateAppWithJSON:object];
+        }
+    }
+    
+    // At this point, we need to check if we have resultCount and results
+    else if ([dict objectForKey:@"resultCount"] && [dict objectForKey:@"results"]) {
+        NSArray *results = [dict objectForKey:@"results"];
+        for (NSDictionary *software in results) {
+            NSNumber *myNumber = [software objectForKey:@"trackId"];
+
+            RJAppStoreApp *app = [self insertOrUpdateAppWithAppId:myNumber];
+            [app updateAppWithJSONFromSearch:software];
+        }
+    }
+    else {
+        NSLog(@"this is something other than what we were expecting");
     }
     [f release];
+
 }
 
 @end

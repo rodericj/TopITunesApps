@@ -27,7 +27,6 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"configure Cell %@", indexPath);
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
                           withRowAnimation:UITableViewRowAnimationNone];
 }
@@ -134,8 +133,6 @@
 }
 
 #pragma mark - Table View Datasource and Delegate Functions
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     NSInteger ret = [[self.fetchController sections] count];

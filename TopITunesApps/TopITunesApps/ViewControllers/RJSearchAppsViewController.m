@@ -15,18 +15,33 @@
 @implementation RJSearchAppsViewController
 @synthesize search;
 
-#pragma mark - UISearchBarDelegate 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 44.0f;
-//}
+#pragma mark - UISearchBarDelegate `
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     NSLog(@"search changed %@", searchText);
+    if (searchText) {
+        [self beginNetworkRequest];
+    }
+    
+    NSString *query = searchText;
+    if (query && query.length) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@", query];
+        [self.fetchController.fetchRequest setPredicate:predicate];
+        [self.fetchController.fetchRequest setFetchLimit:25];
+    }
+    NSError *error = nil;
+    if (![[self fetchController] performFetch:&error]) {
+        // Handle error
+        exit(-1);
+    }
+    [self.tableView reloadData];
+    
 }
 
 #pragma mark 
 
 - (NSString *)appstoreUrl {
-    return @"http://itunes.apple.com/us/rss/topfreeapplications/limit=25/json";
+    return [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@&media=software", search.text];
 }
 
 -(NSPredicate *)predicate {

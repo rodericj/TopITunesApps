@@ -11,5 +11,6 @@
 @interface RJAppStoreApp (Additions)
 
 - (void)updateAppWithJSON:(NSDictionary *)jsonDict;
+- (void)updateAppWithJSONFromSearch:(NSDictionary *)jsonDict;
 
 @end

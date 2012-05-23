@@ -10,6 +10,60 @@
 
 
 @implementation RJAppStoreApp (Additions)
+- (void)updateAppWithJSONFromSearch:(NSDictionary *)jsonDict {
+    NSString *description = [jsonDict objectForKey:@"description"];
+    
+    // app description
+    if (![description isEqualToString:self.appDescription]) {
+        self.appDescription = description;
+    }
+    
+    // developer
+    NSString *developer = [jsonDict objectForKey:@"artistName"];
+    
+    if (![developer isEqualToString:self.developer]) {
+        self.developer = developer;
+    }
+    
+    // imageUrl
+    NSString *imageUrl = [jsonDict objectForKey:@"artworkUrl60"];
+    
+    if (![imageUrl isEqualToString:self.imageUrl]) {
+        self.imageUrl = imageUrl;
+    }
+    
+    // iTunesLink
+    NSString *iTunesLink = [jsonDict objectForKey:@"trackViewUrl"];
+    if (![iTunesLink isEqualToString:self.iTunesLink]) {
+        self.iTunesLink = iTunesLink;
+    }
+    
+    // currency
+    NSString *priceCurrency = [jsonDict objectForKey:@"currency"];
+    if (![priceCurrency isEqualToString:self.priceCurrency]) {
+        self.priceCurrency = priceCurrency;
+    }
+    
+    // price
+    NSNumber *priceAmount = [jsonDict objectForKey:@"price"];
+    if(![priceAmount isEqualToNumber:self.priceAmount]) {
+        self.priceAmount = priceAmount;
+    }
+    
+    // releaseDate
+    // TODO come back to this
+    // This will need to be some kind of static Date Formatter for efficiency sake
+    //    self.releaseDate = [[jsonDict objectForKey:@"im:releaseDate"] objectForKey:@"label"];
+    
+    // title
+    NSString *title = [jsonDict objectForKey:@"trackName"];
+    if (![title isEqualToString:self.title]) {
+        self.title = title;
+    }
+    
+    NSLog(@"title is %@", title);
+
+}
 
 - (void)updateAppWithJSON:(NSDictionary *)jsonDict {
    // NSDictionary *entry = [jsonDict objectForKey:@"entry"];

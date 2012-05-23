@@ -13,7 +13,6 @@
 @interface RJAppTableViewController ()
 
 @property (nonatomic, retain) NSString *appstoreUrl;
-@property (nonatomic, retain) NSURLConnection *connection;
 
 // There are 2 fetched results controllers. One for each query
 @property (nonatomic, retain) NSFetchedResultsController *iPhoneFetchedResultsController;
@@ -24,7 +23,6 @@
 @implementation RJAppTableViewController
 
 @synthesize appstoreUrl;
-@synthesize connection;
 @synthesize selectedSegment;
 
 @synthesize iPhoneFetchedResultsController;
@@ -92,8 +90,11 @@
     [self.tableView reloadData];
     [self beginNetworkRequest];
 }
+- (void)beginSearchNetworkRequest {
+    
+}
+
 - (void)beginNetworkRequest {
-    [self.connection cancel];
     
     NSAssert(self.appstoreUrl, @"Appstore url must be set");
     NSURL *url = [NSURL URLWithString:self.appstoreUrl];
@@ -117,11 +118,7 @@
     });
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.connection cancel];
-    
-    [self beginNetworkRequest];
-       
+- (void)viewWillAppear:(BOOL)animated {    
     [super viewWillAppear:animated];
 }
 
