@@ -15,6 +15,10 @@
 @property (nonatomic, retain) NSString *appstoreUrl;
 @property (nonatomic, retain) NSURLConnection *connection;
 
+// There are 2 fetched results controllers. One for each query
+@property (nonatomic, retain) NSFetchedResultsController *iPhoneFetchedResultsController;
+@property (nonatomic, retain) NSFetchedResultsController *iPadFetchedResultsController;
+
 @end
 
 @implementation RJAppTableViewController
@@ -22,6 +26,9 @@
 @synthesize appstoreUrl;
 @synthesize connection;
 @synthesize selectedSegment;
+
+@synthesize iPhoneFetchedResultsController;
+@synthesize iPadFetchedResultsController;
 
 #pragma mark - support
 
@@ -36,19 +43,21 @@
     }
     
     RJAppStoreApp *app = [self.fetchController objectAtIndexPath:indexPath];
-    cell.textLabel.text = app.title;
+    cell.textLabel.text = [NSString stringWithFormat:@"%d %@", indexPath.row + 1, app.title];
     cell.detailTextLabel.text = app.appDescription;
-    //NSLog(@"the title for %@ is %@ of type %@", app.appId, app.title, app.appType);
+
     return cell;
 }
 
 - (NSString *)entityName {
     return @"RJAppStoreApp";
 }
+
 - (NSPredicate *)predicate {
     NSAssert(NO, @"predicate must be defined in concrete class");
     return nil;
 }
+
 #pragma mark lifecycle methods
 
 - (NSString *)sortBy {
@@ -68,32 +77,44 @@
     self.selectedSegment = segment.selectedSegmentIndex;
        
     NSLog(@"segment changed");
-    //[self.fetchController performFetch:nil];
-
+    
+    self.selectedSegment = segment.selectedSegmentIndex;
+    _fetchController.delegate = nil;
+    if (self.selectedSegment == 0) {
+        self.iPadFetchedResultsController = _fetchController;
+        _fetchController = self.iPhoneFetchedResultsController;
+    }
+    else {
+        self.iPhoneFetchedResultsController = _fetchController;
+        _fetchController = self.iPadFetchedResultsController;
+    }
+    
+    [self.tableView reloadData];
     [self beginNetworkRequest];
 }
-
 - (void)beginNetworkRequest {
     [self.connection cancel];
     
     NSAssert(self.appstoreUrl, @"Appstore url must be set");
     NSURL *url = [NSURL URLWithString:self.appstoreUrl];
     NSLog(@"begin network request appstore url is %@", url);
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    [NSURLConnection sendAsynchronousRequest:request 
-                                       queue:[[[NSOperationQueue alloc] init] autorelease] 
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-                               NSLog(@"Request completed: %@", response.description);
-                               
-                               RJDataModel *dataModel = (RJDataModel *)[RJDataModel sharedInstance];
-                               [dataModel insertAppStoreAppsFromJSONData:data platformType:self.selectedSegment];
-                               [dataModel save];
-                               
-                           }];
-    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
-    [self.connection start];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(queue, ^{
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                             returningResponse:&response
+                                                         error:&error];
 
+        dispatch_async(dispatch_get_main_queue(), ^{
+            RJDataModel *dataModel = (RJDataModel *)[RJDataModel sharedInstance];
+            [dataModel insertAppStoreAppsFromJSONData:data platformType:self.selectedSegment];
+            [dataModel save];
+        });
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
