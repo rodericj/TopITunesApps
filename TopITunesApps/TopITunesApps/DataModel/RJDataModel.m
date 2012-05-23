@@ -64,21 +64,23 @@ static RJDataModel *_dataModel = nil;
     NSDictionary *dict = (NSDictionary *)object;
     NSArray *items = [[dict objectForKey:@"feed"] objectForKey:@"entry"];
     
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    
     NSNumber *platformTypeNumber = [NSNumber numberWithInt:platformType];
     for (int i = 0; i < [items count]; i++) {
         NSDictionary *object = [items objectAtIndex:i];
         NSString *appId = [[[object objectForKey:@"id"] objectForKey:@"attributes"] objectForKey:@"im:id"];
 
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+
         NSNumber * myNumber = [f numberFromString:appId];
-        [f release];
         
         RJAppStoreApp *app = [self insertOrUpdateAppWithAppId:myNumber];
         app.rank = [NSNumber numberWithInt:i];
         app.appType = platformTypeNumber;
         [app updateAppWithJSON:object];
     }
+    [f release];
 }
 
 @end

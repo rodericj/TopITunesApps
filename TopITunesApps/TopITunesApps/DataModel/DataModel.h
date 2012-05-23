@@ -20,5 +20,5 @@
 
 - (NSFetchRequest *)fetchRequestForEntity:(NSString *)entity where:(NSPredicate *)predicate orderBy:(NSString *)sort;
 
-#pragma mark - Device
+- (void)save;
 @end
