@@ -44,6 +44,8 @@
 		1787B7C5156773310070D18E /* RJDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7C3156773310070D18E /* RJDataModel.m */; };
 		1787B7CC1569E88A0070D18E /* RJAppStoreApp+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7CB1569E88A0070D18E /* RJAppStoreApp+Additions.m */; };
 		1787B7CD1569E88A0070D18E /* RJAppStoreApp+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1787B7CB1569E88A0070D18E /* RJAppStoreApp+Additions.m */; };
+		179BE34C1577256300529EBA /* UIImageView+DispatchLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 179BE34B1577256300529EBA /* UIImageView+DispatchLoad.m */; };
+		179BE34D1577256300529EBA /* UIImageView+DispatchLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 179BE34B1577256300529EBA /* UIImageView+DispatchLoad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		1787B7C3156773310070D18E /* RJDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJDataModel.m; path = DataModel/RJDataModel.m; sourceTree = "<group>"; };
 		1787B7CA1569E88A0070D18E /* RJAppStoreApp+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RJAppStoreApp+Additions.h"; path = "DataModel/RJAppStoreApp+Additions.h"; sourceTree = "<group>"; };
 		1787B7CB1569E88A0070D18E /* RJAppStoreApp+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RJAppStoreApp+Additions.m"; path = "DataModel/RJAppStoreApp+Additions.m"; sourceTree = "<group>"; };
+		179BE34A1577256300529EBA /* UIImageView+DispatchLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DispatchLoad.h"; sourceTree = "<group>"; };
+		179BE34B1577256300529EBA /* UIImageView+DispatchLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DispatchLoad.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		1787B7431567306F0070D18E /* TopITunesApps */ = {
 			isa = PBXGroup;
 			children = (
+				179BE3481577255600529EBA /* lib */,
 				1787B790156753D20070D18E /* DataModel */,
 				1787B785156737E00070D18E /* ViewControllers */,
 				1787B74C156730700070D18E /* RJAppDelegate.h */,
@@ -242,6 +247,15 @@
 				17733EB6156A08E800DB4F4A /* RJAppStoreApp.m */,
 			);
 			name = GeneratedNSManagedObjects;
+			sourceTree = "<group>";
+		};
+		179BE3481577255600529EBA /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				179BE34A1577256300529EBA /* UIImageView+DispatchLoad.h */,
+				179BE34B1577256300529EBA /* UIImageView+DispatchLoad.m */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +382,7 @@
 				1787B7C4156773310070D18E /* RJDataModel.m in Sources */,
 				1787B7CC1569E88A0070D18E /* RJAppStoreApp+Additions.m in Sources */,
 				17733EB7156A08E800DB4F4A /* RJAppStoreApp.m in Sources */,
+				179BE34C1577256300529EBA /* UIImageView+DispatchLoad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +401,7 @@
 				1787B7C5156773310070D18E /* RJDataModel.m in Sources */,
 				1787B7CD1569E88A0070D18E /* RJAppStoreApp+Additions.m in Sources */,
 				17733EB8156A08E800DB4F4A /* RJAppStoreApp.m in Sources */,
+				179BE34D1577256300529EBA /* UIImageView+DispatchLoad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

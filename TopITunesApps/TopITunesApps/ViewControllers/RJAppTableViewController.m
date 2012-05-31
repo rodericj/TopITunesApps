@@ -9,6 +9,7 @@
 #import "RJAppTableViewController.h"
 #import "RJDataModel.h"
 #import "RJAppStoreApp.h"
+#import "UIImageView+DispatchLoad.h"
 
 @interface RJAppTableViewController ()
 
@@ -40,10 +41,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseId];
     }
     
+    cell.imageView.image = [UIImage imageNamed:@"first"];
+    
     RJAppStoreApp *app = [self.fetchController objectAtIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%d %@", indexPath.row + 1, app.title];
     cell.detailTextLabel.text = app.appDescription;
 
+    UIImageView *view = [[UIImageView alloc] init];
+    
+    [view setImageFromUrl:app.imageUrl completion:^{
+        if ( [[self.tableView indexPathsForVisibleRows] containsObject:indexPath] ) {
+            cell.imageView.image = view.image;
+        }
+    }];
+    
+    [view release];
+    
     return cell;
 }
 
